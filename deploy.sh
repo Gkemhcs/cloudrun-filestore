@@ -14,7 +14,7 @@ gcloud compute networks vpc-access connectors create connector-us \
 --min-instances 2 \
 --max-instances 3 \
 cd app
-FILESTORE_INSTANCE_IP=$(gcloud filestore instances describe nfs-server --location=ZONE --format="value(networks.ipAddresses[0])")
+FILESTORE_INSTANCE_IP=$(gcloud filestore instances describe nfs-server --location=us-central1-c --format="value(networks.ipAddresses[0])")
 gcloud run deploy frontend --region us-central1 \
 --source . \
 --allow-unauthenticated \
